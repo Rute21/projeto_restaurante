@@ -1,20 +1,18 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
  /*DEFINI AS CONFIGURAÇÕES EM TODOS ELEMENTOS A PÁGINA*/
 
  *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: Inconsolata; 
+    font-family:DM Serif Text; 
  }
 
  /*CRIANDO VARIÁVEIS*/
  :root{
-   --cor01:#ccc88c;
-   --cor02:#e9b139;
-   --cor03:#a89333;
+   --cor01: #d1af65;
+   --cor02: #e0c486;
+   --cor03: #f0e3c0;
    --branca:#fff;
  }
 
@@ -24,7 +22,7 @@
  }
 /*FORMATANDO O CABECALHO*/
 #cabecalho{
-    background-color: #ccc88c;
+    background-color: #d1af65;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,4 +39,57 @@
 #menu ul img{
     width: 25px;
     height: 25px;
+}
+/*FORMATANDO SECTION PESQUISA*/
+#pesquisa{
+    height:100px;
+    background-color: #e0c486;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#pesquisa input{
+   width: 650px;
+   height: 80px;
+   background-color: #f0e3c0;
+   border-radius:8px;
+   padding: 10px;
+   font-size: 1.4em;
+   color: #7a650e;
+}
+ #pesquisa input::placeholder{
+    font-size: 1.3em;
+    font-style: italic;
+    color: #a89874;
+ }
+
+ /*FORMATANDO OS CARDS*/
+ #cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,mimax(250px,1fr));
+    gap: 20px;
+ }
+.cards{
+    width: 250px;
+    min-height: 450px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--cor01);
+}
+.cards img{
+    width: 220px;
+    height:200px;
+    margin: 10px 0px;
+}
+.cards p{
+    font-size: 1.1em;
+    text-transform: uppercase;
+    margin: 20px 0px;
+}
+.cards h2{
+    color: var(--cor02);
+
 }
