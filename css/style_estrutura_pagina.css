@@ -1,75 +1,95 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
- /*DEFINI AS CONFIGURAÇÕES EM TODOS ELEMENTOS A PÁGINA*/
+/*DEFINI AS CONFIGURAÇÕES EM TODOS ELEMENTOS A PÁGINA*/
 
- *{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family:DM Serif Text; 
- }
+    font-family: DM Serif Text;
+}
 
- /*CRIANDO VARIÁVEIS*/
- :root{
-   --cor01: #d1af65;
-   --cor02: #e0c486;
-   --cor03: #f0e3c0;
-   --branca:#fff;
- }
+/*CRIANDO VARIÁVEIS*/
+:root {
+    --cor01: #d1af65;
+    --cor02: #e0c486;
+    --cor03: #f0e3c0;
+    --branca: #fff;
+}
 
- /*FORMATANDO A TAG main PELO ID geral*/
- #geral{
+/*FORMATANDO A TAG main PELO ID geral*/
+#geral {
     margin: 20px;
- }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #f8efdb;
+
+}
+
 /*FORMATANDO O CABECALHO*/
-#cabecalho{
+#cabecalho {
     background-color: #d1af65;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 20px;
-    height:60px;
+    padding: 20px 0px;
+    height: 130px;
+    width: 100%;
+
 }
+
 /*CONFIGURANDO MENU NA HORIZONTAL*/
-#menu ul{
+#menu ul {
     display: flex;
     gap: 30px;
     list-style: none;
 }
 
-#menu ul img{
+#menu ul img {
     width: 25px;
     height: 25px;
 }
+
 /*FORMATANDO SECTION PESQUISA*/
-#pesquisa{
-    height:100px;
+#pesquisa {
+    height: 100px;
     background-color: #e0c486;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#pesquisa input{
-   width: 650px;
-   height: 80px;
-   background-color: #f0e3c0;
-   border-radius:8px;
-   padding: 10px;
-   font-size: 1.4em;
-   color: #7a650e;
+
+#pesquisa input {
+    width: 650px;
+    height: 80px;
+    background-color: #f0e3c0;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1.4em;
+    color: #7a650e;
 }
- #pesquisa input::placeholder{
+
+#pesquisa input::placeholder {
     font-size: 1.3em;
     font-style: italic;
     color: #a89874;
- }
+}
 
- /*FORMATANDO OS CARDS*/
- #cards{
+/*FORMATANDO OS CARDS*/
+#cards {
+    width: 1000px;
     display: grid;
-    grid-template-columns: repeat(auto-fit,mimax(250px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
- }
-.cards{
+    background-color: #f8efdb;
+
+
+}
+
+
+.card {
     width: 250px;
     min-height: 450px;
     padding: 5px;
@@ -79,17 +99,93 @@
     justify-content: center;
     border: 1px solid var(--cor01);
 }
-.cards img{
+
+.card img {
     width: 220px;
-    height:200px;
+    height: 200px;
     margin: 10px 0px;
 }
-.cards p{
+
+.card p {
     font-size: 1.1em;
     text-transform: uppercase;
     margin: 20px 0px;
 }
-.cards h2{
-    color: var(--cor02);
 
+.card:hover {
+    transform: translateY(5px);
 }
+
+.card h2 {
+    color: var(--cor02);
+}
+
+.card button {
+    width: 100%;
+    height: 40px;
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--cor03);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #7a650e;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*FORMATANDO RODAPE*/
+#rodape {
+    width: 100%;
+    height: 180px;
+    background-color: var(--cor02);
+    margin: 20px 0px;
+    padding: 10px;
+    color: var(--branca);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*FORMATANDO LINKS*/
+#menu a:link {
+    font-size: 1.4em;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #7a650e;
+}
+
+#menu a:visited {
+    font-size: 1.4em;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #d1af65;
+}
+
+#menu a:hover {
+    font-size: 1.6em;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #7a650e;
+}
+
+#menu a:active {
+    font-size: 1.6em;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #7a650e;
+}
+
+#logo {
+    font-size: 1.9em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: #7a650e;
+}
+
