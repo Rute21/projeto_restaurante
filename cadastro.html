@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Meu Restaurante Virtual</title>
+
+    <link rel="stylesheet" href="../css/style_formulario.css">
+    
+</head>
+
+<body>
+    <main id="geral">
+        <header id="cabecalho">
+            <div id="logo">
+                Sabor & Tradição
+            </div>
+
+            <nav id="menu">
+                <ul>
+                    <li><a href="index.html">Cardápio</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="./sobre.html">Sobre</a></li>
+                    <li><a href="./login.html">Login</a></li>
+                    <li>
+                        <a href="paginas/carrinho.html">
+                            <img src="imagens/icone.png" alt="icone_carrinho">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+    
+        </header>
+        
+        <section id="cadastro">
+            <h1>Cadastro</h1>
+        
+            <form id="form-pessoa">
+        
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+        
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" required placeholder="000.000.000-00">
+
+                <label for="data">Data de Nascimento:</label>
+                <input type="text" id="data" name="data" required placeholder="xx/xx/xxxx">
+        
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+        
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required placeholder="Rua, Avenida...">
+        
+                <label for="numero">Nº:</label>
+                <input type="text" id="numero" name="numero" required placeholder="Nº da casa">
+        
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" required placeholder="Sua cidade">
+        
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" required placeholder="00000-000">
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required placeholder="Crie uma senha">
+        
+                <button type="submit">Cadastrar</button>
+        
+            </form>
+        </section>
+    
+    
+
+    </main>
+
+</body>
+
+</html>
