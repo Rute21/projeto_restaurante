@@ -1,0 +1,77 @@
+@import url('css/style_estrutura_pagina.css');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+
+#geral {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #f8efdb;
+  padding: 20px;
+  font-family: DM Serif Text;
+}
+
+#cabecalho {
+    background-color: #d1af65;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 20px;
+    height: 120px;
+    width: 100%;
+
+}
+#menu ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding: 50px;
+}
+
+#menu ul img {
+    width: 25px;
+    height: 25px;
+}
+
+#menu a:link,
+#menu a:visited {
+    color: #7a650e;
+    text-decoration: none;
+    font-size: 1.9em;
+    text-transform: lowercase;
+}
+
+
+#menu a:hover {
+    font-size: 1.6em;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #7a650e;
+}
+
+#menu a:active {
+    font-size: 1.6em;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #7a650e;
+}
+
+
+#logo {
+    font-size: 1.9em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: #7a650e;
+}
+h1{
+    color: #7a650e;
+    font-size: 1.9em;
+
+}
+ 
+ 
