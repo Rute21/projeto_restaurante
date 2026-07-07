@@ -1,4 +1,3 @@
-// PEGAR BOTÕES DO CARDÁPIO
 const botoes = document.querySelectorAll(".btn-add");
 
 
@@ -6,9 +5,10 @@ const botoes = document.querySelectorAll(".btn-add");
 // ADICIONAR PRODUTO AO CARRINHO
 // ===============================
 
-if (botoes.length > 0) {
+let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+if (botoes.length > 0) {
 
     botoes.forEach(botao => {
 
@@ -51,8 +51,6 @@ if (botoes.length > 0) {
             );
 
 
-            // MENSAGEM DE CONFIRMAÇÃO
-
             const mensagem = document.createElement("div");
 
             mensagem.textContent =
@@ -89,8 +87,9 @@ const listaCarrinho = document.getElementById("lista-carrinho");
 
 const totalElemento = document.getElementById("total");
 
+const freteSelect = document.getElementById("frete-select");
 
-let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+const freteElemento = document.getElementById("valor-frete");
 
 
 
@@ -99,6 +98,7 @@ if (listaCarrinho) {
     atualizarCarrinho();
 
 }
+
 
 
 
@@ -112,14 +112,14 @@ function atualizarCarrinho() {
     listaCarrinho.innerHTML = "";
 
 
-    let total = 0;
+    let subtotal = 0;
 
 
 
     carrinho.forEach((item, index) => {
 
 
-        total += item.preco * item.quantidade;
+        subtotal += item.preco * item.quantidade;
 
 
 
@@ -160,7 +160,7 @@ function atualizarCarrinho() {
             <br>
 
 
-            <button class= "btn-remover" onclick = "removerItem(${index})">
+            <button class="btn-remover" onclick="removerItem(${index})">
                 🗑️ Remover
             </button>
 
@@ -178,8 +178,46 @@ function atualizarCarrinho() {
 
 
 
-    totalElemento.textContent =
-        "R$ " + total.toFixed(2).replace(".", ",");
+    // ===============================
+    // CALCULAR FRETE
+    // ===============================
+
+    let valorFrete = 0;
+
+
+    if (freteSelect) {
+
+        valorFrete = Number(freteSelect.value);
+
+    }
+
+
+
+    if (freteElemento) {
+
+        freteElemento.textContent =
+            "R$ " + valorFrete.toFixed(2).replace(".", ",");
+
+    }
+
+
+
+
+    // ===============================
+    // TOTAL FINAL
+    // ===============================
+
+
+    let total = subtotal + valorFrete;
+
+
+
+    if (totalElemento) {
+
+        totalElemento.textContent =
+            "R$ " + total.toFixed(2).replace(".", ",");
+
+    }
 
 
 
@@ -187,6 +225,7 @@ function atualizarCarrinho() {
         "carrinho",
         JSON.stringify(carrinho)
     );
+
 
 }
 
@@ -261,4 +300,24 @@ function removerItem(index) {
 
 
 }
- 
+
+
+
+
+
+// ===============================
+// ATUALIZAR FRETE AO TROCAR OPÇÃO
+// ===============================
+
+
+if (freteSelect) {
+
+    freteSelect.addEventListener(
+        "change",
+        atualizarCarrinho
+    );
+
+}
+
+
+

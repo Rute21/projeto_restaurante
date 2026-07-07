@@ -36,21 +36,58 @@
         </header>
             
         <div id="carrinho">
+
             <h1>🛒 Carrinho</h1>
         
             <ul id="lista-carrinho">
                 <!-- Os produtos serão adicionados aqui pelo JavaScript -->
             </ul>
         
+        
+            <p>
+                <strong>Subtotal:</strong>
+                <span id="subtotal">R$ 0,00</span>
+            </p>
+        
+        
+            <label for="frete-select">
+                🚚 Escolha a entrega:
+            </label>
+        
+            <select id="frete-select">
+        
+                <option value="5">
+                    Entrega normal - R$ 5,00
+                </option>
+        
+                <option value="10">
+                    Entrega distante - R$ 10,00
+                </option>
+        
+                <option value="15">
+                    Entrega especial - R$ 15,00
+                </option>
+        
+            </select>
+        
+        
+            <p>
+                <strong>Frete:</strong>
+                <span id="valor-frete">R$ 0,00</span>
+            </p>
+        
+        
             <p>
                 <strong>Total:</strong>
-                 <span id="total">R$ 0,00</span>
-                
-           </p>
-           
-          
-         <button id="btn-finalizar">Finalizar pedido</button>
-            
+                <span id="total">R$ 0,00</span>
+            </p>
+        
+        
+            <button id="btn-finalizar">
+                Finalizar pedido
+            </button>
+        
+        
         </div>
 
       
