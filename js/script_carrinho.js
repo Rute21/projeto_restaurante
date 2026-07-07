@@ -160,7 +160,7 @@ function atualizarCarrinho() {
             <br>
 
 
-            <button onclick="removerItem(${index})">
+            <button class= "btn-remover" onclick = "removerItem(${index})">
                 🗑️ Remover
             </button>
 

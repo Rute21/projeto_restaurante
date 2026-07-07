@@ -117,3 +117,33 @@ h1{
 
 }
 
+.mensagem-carrinho {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #28a745;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    z-index: 9999;
+}
+.btn-add {
+    background-color: #ff7b00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+/* animação quando clicar */
+.btn-add:active {
+    transform: scale(0.9);
+}
+
+
+/* efeito quando passar o mouse */
+.btn-add:hover {
+    transform: scale(1.05);
+}

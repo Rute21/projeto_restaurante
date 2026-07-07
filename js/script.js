@@ -11,7 +11,7 @@ campoPesquisa.addEventListener("input", function () {
         const nomeProduto = card.querySelector("p").textContent.toLowerCase();
 
         if (nomeProduto.includes(pesquisa)) {
-            card.style.display = "block";
+            card.style.display = "";
         } else {
             card.style.display = "none";
         }

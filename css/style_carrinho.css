@@ -73,5 +73,26 @@ h1{
     font-size: 1.9em;
 
 }
- 
- 
+#btn-finalizar{
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #d1ac82;
+    border-radius: 5px;
+    display: block;
+    margin-top: 15px;
+    background-color: #d1af65;
+    color: #362b07;
+    font-size: 1.1em;
+}
+.btn-remover {
+    background-color:  #94690e;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-remover:hover {
+    background-color: #94690e;
+}
