@@ -231,3 +231,32 @@ p {
 .btn-add:hover {
     transform: scale(1.05);
 }
+ 
+/*FORMATANDO O MENU DE SECÕES */
+#secoes-produtos{
+    width: 100%;
+    min-height: 10px;
+    background-color: #c5a14e;
+    margin: 20px 0px;
+    padding: 10px;
+    justify-content: center;
+
+    
+}
+.lnk-secao:link, .lnk-secao:visited{
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform:  DM Serif Text;
+    color: #f1e3bc;
+}
+#menu-secoes {
+    display: flex;
+    list-style: none; /* tira as bolinhas */
+    gap: 20px;        /* espaço entre os itens */
+    justify-content: center; /* centraliza */
+}
+.lnk-secao:hover{
+    font-size: 1.4em;
+    text-transform: uppercase;
+    color: #f0e3c0;
+}
