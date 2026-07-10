@@ -139,6 +139,9 @@
     font-weight: bold;
     cursor: pointer;
 }
+.card h3 {
+    color: #695937;
+}
 
 /*FORMATANDO RODAPE*/
 #rodape {
@@ -240,6 +243,7 @@ p {
     margin: 20px 0px;
     padding: 10px;
     justify-content: center;
+    
 
     
 }

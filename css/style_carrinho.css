@@ -147,13 +147,14 @@ h1{
     border:1px solid #ccc;
 }
 .img-remover img{
-    width:28px;
+    width:17px;
     cursor:pointer;
     transition:.3s;
 }
 
 .img-remover img:hover{
     transform:scale(1.2);
+   
 }
 .titulo-carrinho{
     font-size:40px;
@@ -163,4 +164,8 @@ h1{
 .container-carrinho{
     width:900px;
     margin:40px auto;
+}
+h3{
+    color: #7a650e;
+    font-size: 1.9em;
 }
