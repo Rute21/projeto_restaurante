@@ -74,98 +74,180 @@ h1{
 
 }
 
-.btn-remover {
-    background-color:  #94690e;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn-remover:hover {
-    background-color: #94690e;
-}
-#btn-continuar{
-    width: 300px;
-    padding: 8px;
-    border: 1px solid #d1ac82;
-    border-radius: 5px;
-    display: block;
-    margin-top: 15px;
-    background-color: #d1af65;
-    color: #362b07;
-    font-size: 1.1em;
-}
-#btn-finalizar{
-    width: 300px;
-    padding: 8px;
-    border: 1px solid #d1ac82;
-    border-radius: 5px;
-    display: block;
-    margin-top: 15px;
-    background-color: #d1af65;
-    color: #362b07;
-    font-size: 1.1em;
-}
-.item{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    background: #fff;
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 20px;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,.15);
-}
-.img-item img{
-    width:180px;
-    height:130px;
-    object-fit: cover;
-    border-radius:10px;
-}
-.descricao{
-    font-size:22px;
-    font-weight:bold;
-    color:#5b3b07;
-    margin-bottom:10px;
-}
-.valores{
-    display:flex;
-    align-items:center;
-    gap:25px;
-}
-.input-item{
-    width:60px;
-    height:35px;
-    text-align:center;
-    font-size:18px;
-
-    border-radius:8px;
-    border:1px solid #ccc;
-}
-.img-remover img{
-    width:17px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.img-remover img:hover{
-    transform:scale(1.2);
-   
-}
-.titulo-carrinho{
-    font-size:40px;
-    color:#8b6508;
-    margin-bottom:30px;
-}
-.container-carrinho{
-    width:900px;
-    margin:40px auto;
-}
+/*
+#94690e;
+#d1ac82;
+#d1af65;
+#5b3b07;
+*/
 h3{
     color: #7a650e;
     font-size: 1.9em;
 }
+
+#carrinho{
+    display: flex;
+}
+
+#itens-carrinho{
+    width: 70%;
+}
+
+.itens{
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.img-item{
+    width: 120px;
+}
+
+.img-item img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+#descricoes-itens{
+    width: 100%;
+}
+
+.descricao{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--cor02);
+    margin-bottom: 15px;
+    font-family: DM Serif Text;
+    color: #362b07;
+}
+
+.valores{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: DM Serif Text;
+    color: #362b07;
+}
+
+.valores p{
+    font-size: 18px;
+    color: var(--cor01);
+    font-weight: bold;
+    font-family: DM Serif Text;
+}
+
+.input-item{
+    width: 60px;
+    height: 35px;
+    text-align: center;
+    border: 1px solid #f7e0b0;
+    border-radius: 5px;
+}
+
+.img-remover img{
+    width: 17px;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+
+#valores-carrinho{
+    width: 30%;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 30px;
+    height: fit-content;
+}
+
+.titulo-valores-carrinho{
+    color: var(--cor02);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.valor{
+    color: var(--cor01);
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: DM Serif Text;
+    color: #362b07;
+}
+#div-calc-valor{
+    font-family: DM Serif Text;
+    color: #362b07;
+
+}
+.input-cep{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+   
+}
+.btn-carrinho{
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 6px;
+    background: var(--cor01);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: .3s;
+}
+
+.btn-carrinho:hover{
+    background: var(--cor02);
+}
+
+#btn-continuar,#btn-finalizar{
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #d1ac82;
+    border-radius: 5px;
+    display: block;
+    margin-top: 15px;
+    background-color: #d1af65;
+    color: #362b07;
+    font-size: 1.1em;
+   
+}
+
+
+
+
+@media(max-width:900px){
+
+    #carrinho{
+       display: flex;
+      align-items: flex-start; /* ou center */
+    gap: 30px;
+    }
+
+    #itens-carrinho,
+    #valores-carrinho{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .itens{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .valores{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+	

@@ -1,5 +1,6 @@
 /*IMPORTANDO OS PRODUTOS DO ARQUIVO SCRIPT_CARRINHO*/
-import{produtos} from './script_carrinho.js'
+import{produtos} from './lista_produtos.js'
+import { addItem } from './carrinho.js'
 
 /*PEGANDO ELEMNTOR DO DOM*/
 const sectionCards= document.querySelector('#cards')
@@ -86,6 +87,8 @@ const filtroProdutos = (idSecao) => {
     return produtos.filter(elem => elem.id_secao === idSecao);
 }
 
+
+
 //FUNÇÃO MONTA CARDS
 const montaCards = (objProdutos) =>{
 
@@ -118,6 +121,10 @@ objProdutos.forEach((elem,i)=> {
         btnCard.setAttribute('class', 'btn-add')
         btnCard.innerHTML = 'Adicionar'
 
+        btnCard.addEventListener('click',()=> {
+            window.location.href = 'carrinho.html'
+        })
+
 //ADICIONANDO OS ELEMENTOS FILHOS AOS DIVCARD 
         divCard.appendChild(imgCard)
         divCard.appendChild(pCard)
@@ -128,5 +135,8 @@ objProdutos.forEach((elem,i)=> {
         sectionCards.appendChild(divCard)
 
 
-})  
+  })  
+
 }
+
+carregandoProdutos(0)
