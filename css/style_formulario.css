@@ -117,6 +117,14 @@ h1{
 
 }
 
+button:active{
+    transform: scale(0.9);
+}
+button:hover{
+    transform: scale(1.05);
+}
+
+
 .mensagem-carrinho {
     position: fixed;
     top: 20px;

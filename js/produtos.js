@@ -122,6 +122,7 @@ objProdutos.forEach((elem,i)=> {
         btnCard.innerHTML = 'Adicionar'
 
         btnCard.addEventListener('click',()=> {
+            addItem(elem)
             window.location.href = 'carrinho.html'
         })
 
@@ -139,4 +140,3 @@ objProdutos.forEach((elem,i)=> {
 
 }
 
-carregandoProdutos(0)

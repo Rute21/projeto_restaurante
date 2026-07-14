@@ -252,24 +252,7 @@ const produtos = [
       id_secao: 6,
       secao: "Sobremesas"
     },
-    {
-      id_produto: 29,
-      descricao_produto: "Refrigerante Lata",
-      valor_unitario: 6.00,
-      unidade: "lata",
-      caminho_imagem: "/imagens/refrigerante.png",
-      id_secao: 5,
-      secao: "Bebidas"
-    },
-    {
-      id_produto: 30,
-      descricao_produto: "Água Mineral",
-      valor_unitario: 4.00,
-      unidade: "garrafa",
-      caminho_imagem: "/imagens/agua.png",
-      id_secao: 5,
-      secao: "Bebidas"
-    }
+   
   ];
 export {produtos}
   

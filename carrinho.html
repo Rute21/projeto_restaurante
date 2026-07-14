@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="css/style_carrinho.css">
 
-    <script src="js/script_carrinho.js" defer></script>
+    <script type="module" src="js/tela_carrinho.js"  defer></script>
 
 </head>
 
@@ -138,7 +138,7 @@
                             </div>
                         </div>
                 </section>
-
+                
                 <section class="itens">
                     <div class="img-item">
 
@@ -165,45 +165,48 @@
 
             </section>
 
-            <section id="pequisa">
-                <h3>Cadastro pessoa</h3>
-    
-                <div id="valores-carrinho">
-    
-                    <div id="div-cep">
-                        <h2 class="titulo-valores-carrinho">CEP</h2>
-    
-                        <div id="input-cep">
-                            <input type="text" name="input-cep" id="input-cep" class="input-cep">
-                        </div>
+           
+
+            <div id="valores-carrinho">
+
+                <section id="pequisa">
+                    <h3>Cadastro pessoa</h3>
+                </section>
+               
+                <div id="div-cep">
+                    <h2 class="titulo-valores-carrinho">CEP</h2>
+
+                    <div id="input-cep">
+                        <input type="text" name="input-cep" id="input-cep" class="input-cep">
                     </div>
-    
-                    <div id="div-calc-valor">
-                        <h2 class="titulo-valores-carrinho">Valor Total</h2>
-                        <p id="valor-total" class="valor">R$ 100,00</p>
-    
-                        <h2 class="titulo-valores-carrinho">Valor Frete</h2>
-                        <p id="valor-frete" class="valor">R$ 10,00</p>
-                    </div>
-    
-                    <div id="div-calc-valor">
-                        <h2 class="titulo-valores-carrinho">Total a Pagar</h2>
-                        <p id="valor-pagar" class="valor">R$ 100,00</p>
-                    </div>
-    
-                    <button id="btn-continuar" class="btn-carrinho">
-                        Continuar Compra
-                    </button>
-    
-                    <button id="btn-finalizar" class="btn-carrinho">
-                        Finalizar Compra
-                    </button>
-    
                 </div>
 
-            </section>
+                <div id="div-calc-valor">
+                    <h2 class="titulo-valores-carrinho">Valor Total</h2>
+                    <p id="valor-total" class="valor">R$ 100,00</p>
 
-            
+                    <h2 class="titulo-valores-carrinho">Valor Frete</h2>
+                    <p id="valor-frete" class="valor">R$ 10,00</p>
+                </div>
+
+                <div id="div-calc-valor">
+                    <h2 class="titulo-valores-carrinho">Total a Pagar</h2>
+                    <p id="valor-pagar" class="valor">R$ 100,00</p>
+                </div>
+
+                <button id="btn-continuar" class="btn-carrinho">
+                    Continuar Compra
+                </button>
+
+                <button id="btn-finalizar" class="btn-carrinho">
+                    Finalizar Compra
+                </button>
+
+
+            </div>
+    
+             
+
         </section>
 
        
