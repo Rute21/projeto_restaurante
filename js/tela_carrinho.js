@@ -1,11 +1,11 @@
 import { listItens } from "./carrinho.js";
 
 // MONTAR TELA CARRINHO
-const montaTelaCarrinho = (objListaItens) => {
+const montaTelaCarrinho = (listItens) => {
 
     const sectionItensCarrinho = document.querySelector('#itens-carrinho');
 
-    objListaItens.forEach((elem, i) => {
+    listItens.forEach((elem, i) => {
 
         const sectionItem = document.createElement('section');
         sectionItem.setAttribute('class', 'itens');
@@ -50,7 +50,7 @@ const montaTelaCarrinho = (objListaItens) => {
         pCalc.innerHTML = `R$ ${elem.valor_unitario * 1}`;
 
         const imgRemover = document.createElement('img');
-        imgRemover.setAttribute('src', '../imagens/remover.png');
+        imgRemover.setAttribute('src', 'imagens/remover.png');
         imgRemover.setAttribute('alt', 'img-remover');
 
         divValores.appendChild(pItem);
@@ -69,4 +69,4 @@ const montaTelaCarrinho = (objListaItens) => {
 
 };
 
-montaTelaCarrinho();
+montaTelaCarrinho(listItens());

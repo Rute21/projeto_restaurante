@@ -1,5 +1,5 @@
 //CRIANDO O ARRAY DE ITENS DO CARRINHO
-const itensCarrinho = JSON.parse(sessionStorage.getItem('carrinhosessao')) || []
+const itensCarrinho = JSON.parse(sessionStorage.getItem('carrinhosessao'))
 //const itensCarrinho2 = JSON.parse(sessionStorage.get('carrinhoSessao')) || []
   
  
