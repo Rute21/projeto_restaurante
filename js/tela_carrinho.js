@@ -1,74 +1,87 @@
-import { listItens } from "./carrinho.js";
+import { listItens, removeItem } from "./carrinho.js"
 
-// MONTAR TELA CARRINHO
-const montaTelaCarrinho = (listItens) => {
+//MONTAR TELA CARRINHO
+const montaTelaCarrinho = ()=>{
+    const sectionItensCarrinho = document.querySelector('#itens-carrinho')
 
-    const sectionItensCarrinho = document.querySelector('#itens-carrinho');
+    sectionItensCarrinho.innerHTML = ''
 
-    listItens.forEach((elem, i) => {
+    listItens().forEach((elem, i) => {
+        const sectionItem = document.createElement('section')
+        sectionItem.setAttribute('class', 'itens')
 
-        const sectionItem = document.createElement('section');
-        sectionItem.setAttribute('class', 'itens');
+        const divImgItem = document.createElement('div')
+        divImgItem.setAttribute('class', 'img-item')
 
-        const divImgItem = document.createElement('div');
-        divImgItem.setAttribute('class', 'img-item');
+        const imgItem = document.createElement('img')
+        imgItem.setAttribute('src', elem.caminho_imagem)
+        imgItem.setAttribute('alt', elem.descricao_produto)
 
-        const imgItem = document.createElement('img');
-        imgItem.setAttribute('src', elem.caminho_imagem);
-        imgItem.setAttribute('alt', elem.descricao_produto);
+        divImgItem.appendChild(imgItem)
 
-        divImgItem.appendChild(imgItem);
+        const divDescricaoItens = document.createElement('div')
+        divDescricaoItens.setAttribute('class', 'descricoes-itens')
 
-        const divDescricaoItens = document.createElement('div');
-        divDescricaoItens.setAttribute('class', 'descricoes-itens');
+        const divDescricao = document.createElement('div')
+        divDescricao.setAttribute('class', 'descricao')
+        divDescricao.innerHTML = elem.descricao_produto
 
-        const divDescricao = document.createElement('div');
-        divDescricao.setAttribute('class', 'descricao');
-        divDescricao.innerHTML = elem.descricao_produto;
+        const divValores = document.createElement('div')
+        divValores.setAttribute('class', 'valores')
 
-        const divValores = document.createElement('div');
-        divValores.setAttribute('class', 'valores');
+        const pItem = document.createElement('p')
+        pItem.innerHTML = `R$ ${parseFloat(elem. valor_unitario).
+        toFixed(2).replace('.',',')}`
 
-        const pItem = document.createElement('p');
-        pItem.innerHTML = `R$ ${parseFloat(elem.valor_unitario)
-            .toFixed(2)
-            .replace('.', ',')}`;
+        const divQuant = document.createElement('div')
+        divQuant.setAttribute('class', 'input-quantidade')
 
-        const divQuant = document.createElement('div');
-        divQuant.setAttribute('class', 'input-quantidade');
+        const inputQuantidade = document.createElement('input')
+        inputQuantidade.setAttribute('type', 'number')
+        inputQuantidade.setAttribute('name', `quant${i}`)
+        inputQuantidade.setAttribute('id', `quant${i}`)
+        inputQuantidade.setAttribute('class', 'input-item')
+        inputQuantidade.setAttribute('value', elem.quantidade)
 
-        const inputQuantidade = document.createElement('input');
-        inputQuantidade.setAttribute('type', 'number');
-        inputQuantidade.setAttribute('name', `quant${i}`);
-        inputQuantidade.setAttribute('id', `quant${i}`);
-        inputQuantidade.setAttribute('class', 'input-item');
-        inputQuantidade.setAttribute('value', 1);
+        divQuant.appendChild(inputQuantidade)
 
-        divQuant.appendChild(inputQuantidade);
+        const pCalc = document.createElement('p')
+        pCalc.innerHTML = `R$ ${elem.valor_unitario * 1}`
 
-        const pCalc = document.createElement('p');
-        pCalc.innerHTML = `R$ ${elem.valor_unitario * 1}`;
+        const divRemover = document.createElement('div');
+        divRemover.setAttribute('class','img-remover');
 
         const imgRemover = document.createElement('img');
-        imgRemover.setAttribute('src', 'imagens/remover.png');
-        imgRemover.setAttribute('alt', 'img-remover');
+        imgRemover.setAttribute('src','imagens/remover.png');
 
-        divValores.appendChild(pItem);
-        divValores.appendChild(divQuant);
-        divValores.appendChild(pCalc);
-        divValores.appendChild(imgRemover);
+        divRemover.appendChild(imgRemover);
 
-        divDescricaoItens.appendChild(divDescricao);
-        divDescricaoItens.appendChild(divValores);
+        imgRemover.addEventListener('click', () => {
+            if (confirm(`Tem certeza que deseja remover ${elem.descricao_produto} do carrinho?`)) {
+                removerItemTela(i);
+            }
+        })
 
-        sectionItem.appendChild(divImgItem);
-        sectionItem.appendChild(divDescricaoItens);
+        divValores.appendChild(pItem)
+        divValores.appendChild(divQuant)
+        divValores.appendChild(pCalc)
+        divValores.appendChild(divRemover)
 
-        sectionItensCarrinho.appendChild(sectionItem);
-    });
+        divDescricaoItens.appendChild(divDescricao)
+        divDescricaoItens.appendChild(divValores)
 
-};
+        sectionItem.appendChild(divImgItem)
+        sectionItem.appendChild(divDescricaoItens)
 
+        sectionItensCarrinho.appendChild(sectionItem)
+    })
 
+}
 
-montaTelaCarrinho();
+montaTelaCarrinho()
+const removerItemTela = (pos)=>{
+    removeItem(pos)
+
+    montaTelaCarrinho()
+}
+        

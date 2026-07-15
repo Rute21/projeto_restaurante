@@ -16,7 +16,6 @@ const listaProdutos = () => {
     return produtos
 }
 
-
 //MONTANDO OS MENUS SEÇÕES
 const menuSecoes = () => {
     const mapSecoes = new Map()
@@ -91,6 +90,20 @@ const filtroProdutos = (idSecao) => {
 }
 
 
+//CAPTURANDO OS CARACTERES DO INPUT PESQUISA
+//PEGANDO O INPUT DO DOM 
+const inputPesquisa = document.querySelector('#pesquisa')
+
+inputPesquisa.addEventListener('input', (evt) => {
+
+    //PEGANDO O VALOR DO INPUT E CONVERTENDO EM MINUSCULO
+    let txtInput = evt.target.value.toLowerCase()
+
+    //FILTRANDO OS CARDS A PARTIR DO FILTER E INCLUIDES
+    montaCards(produtos.filter(elem => elem.descricao_produto.toLowerCase().includes(txtInput)))
+
+})
+
 //FUNÇÃO MONTA CARDS
 const montaCards = (objProdutos) => {
 
@@ -124,11 +137,8 @@ const montaCards = (objProdutos) => {
         btnCard.innerHTML = 'Adicionar'
 
         btnCard.addEventListener('click', () => {
-            addItem(elem);
-        
-            console.log(sessionStorage.getItem('carrinhosessao'));
-        
-            window.location.href = 'carrinho.html';
+            addItem(elem)
+            window.location.href = 'carrinho.html'
         })
 
 
@@ -140,7 +150,6 @@ const montaCards = (objProdutos) => {
 
         //ADICIONANDO O DIVCARD A SECTION CARDS
         sectionCards.appendChild(divCard)
-
 
     })
 }

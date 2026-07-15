@@ -1,31 +1,47 @@
-//CRIANDO O ARRAY DE ITENS DO CARRINHO
-const itensCarrinho = JSON.parse(sessionStorage.getItem('carrinhoSessao'))
-//const itensCarrinho2 = JSON.parse(sessionStorage.get('carrinhoSessao')) || []
-  
+// ARRAY DE ITENS DO CARRINHO
+let itensCarrinho = JSON.parse(sessionStorage.getItem("carrinhoSessao")) || []
+//const itensCarrinho = JSON.parse(localStorge.get('carrinhoSessao')) || []
+
+//FUNÇÃO ITEM
+const item = (objProduto) => {
+
+    const item = {
+        id_produto: objProduto.id_produto,
+        descricao_produto: objProduto.descricao_produto,
+        valor_unitario: objProduto.valor_unitario,
+        unidade: objProduto. unidade,
+        caminho_imagem: objProduto.caminho_imagem,
+        quantidade: 1,
+       /* totalItem: parseFloat(quantidade) * parseFloat(objProduto.valor_unitario)*/
+    }
+
+    return item
+}
+
+//FUNÇÃO PARA ADICIONAR UM ITEM
+const addItem = (objItem) => {
+    itensCarrinho.push(item(objItem))
+
+    sessionStorage.setItem("carrinhoSessao", JSON.stringify(itensCarrinho))
+    
  
-//FUNÇAO PARA ADICIONAR UM ITEM
-const addItem = (ObjItem) => {
-    itensCarrinho.push(ObjItem)
-
-
-    sessionStorage.setItem('carrinhoSessao', JSON.stringify(itensCarrinho))
-
-    listItens()
 }
 
-//FUNÇÃO  PARA LISTAR OS ITENS DO CARRINHO 
+//FUNÇÃO PARA LISTAR OS ITENS DO CARRINHO
 const listItens = () => {
-    return JSON.parse(sessionStorage.getItem('carrinhoSessao')) || [];
+
+    const listaItens = JSON.parse(sessionStorage.getItem("carrinhoSessao"))
+
+    return listaItens
+
 }
-  
-const removeItem = (pos) => {
+
+//FUNÇÃO REMOVER ITEM DO ARRAY
+const removeItem = (pos)=>{
     itensCarrinho.splice(pos,1)
 
-
-    sessionStorage.setItem('carrinhoSessao', JSON.stringify(itensCarrinho))
+    sessionStorage.setItem('carrinhoSessao', JSON.stringify(itensCarrinho)) 
 }
 
-
-
-
-export {addItem,listItens,removeItem}
+//EXPORTAÇÃO
+export { addItem, listItens, removeItem }
