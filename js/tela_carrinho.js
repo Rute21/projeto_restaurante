@@ -69,4 +69,6 @@ const montaTelaCarrinho = (listItens) => {
 
 };
 
-montaTelaCarrinho(listItens());
+
+
+montaTelaCarrinho();

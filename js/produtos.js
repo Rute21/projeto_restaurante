@@ -124,8 +124,11 @@ const montaCards = (objProdutos) => {
         btnCard.innerHTML = 'Adicionar'
 
         btnCard.addEventListener('click', () => {
-            addItem(elem)
-            window.location.href = './carrinho.html'
+            addItem(elem);
+        
+            console.log(sessionStorage.getItem('carrinhosessao'));
+        
+            window.location.href = 'carrinho.html';
         })
 
 
