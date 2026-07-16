@@ -79,7 +79,7 @@ const montaTelaCarrinho = ()=>{
       //Ela apenas cria um elemento HTML <p> (um parágrafo).
         const pCalc = document.createElement('p')
      //pega o preço de uma unidade e multiplica pela quantidade 
-     const totalItem = parseFloat(elem.valor_unitario) * elem.quantidade;
+        const totalItem = parseFloat(elem.valor_unitario) * elem.quantidade;
     //+= quer dizer: "Pegue o que já existe e some mais isso."
         totalCarrinho += totalItem;
     //toFixed (2) é para aparecer assim 00.00 e replace('.', ',') é para aparecer 00,00
