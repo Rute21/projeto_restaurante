@@ -7,6 +7,8 @@
     <title>Projeto Meu Restaurante Virtual</title>
 
     <link rel="stylesheet" href="./css/style_formulario.css">
+
+    <script src="/js/consulta_cep.js" defer></script>
     
 </head>
 
@@ -52,12 +54,18 @@
         
                 <label for="endereco">Endereço:</label>
                 <input type="text" id="endereco" name="endereco" required placeholder="Rua, Avenida...">
-        
+
                 <label for="numero">Nº:</label>
                 <input type="text" id="numero" name="numero" required placeholder="Nº da casa">
         
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" required placeholder="Seu bairro">
+
                 <label for="cidade">Cidade:</label>
                 <input type="text" id="cidade" name="cidade" required placeholder="Sua cidade">
+
+                <label for="uf">UF:</label>
+                <input type="text" id="uf" name="uf">
         
                 <label for="cep">CEP:</label>
                 <input type="text" id="cep" name="cep" required placeholder="00000-000">
